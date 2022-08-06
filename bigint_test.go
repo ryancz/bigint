@@ -33,6 +33,16 @@ func TestNewFromString(t *testing.T) {
 	assert.Equal(t, s[2:], bi.Text(16))
 }
 
+func TestZero(t *testing.T) {
+	zero := Zero()
+	assert.Equal(t, int64(0), zero.Int64())
+}
+
+func TestOne(t *testing.T) {
+	one := One()
+	assert.Equal(t, int64(1), one.Int64())
+}
+
 func TestAdd(t *testing.T) {
 	one := New(1)
 	two := New(2)

@@ -16,6 +16,14 @@ func NewFromString(value string, base int) (*big.Int, bool) {
 	return New(0).SetString(value, base)
 }
 
+func Zero() *big.Int {
+	return New(0)
+}
+
+func One() *big.Int {
+	return New(1)
+}
+
 func Add(x, y *big.Int) *big.Int {
 	return New(0).Add(x, y)
 }
