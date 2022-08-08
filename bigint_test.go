@@ -95,6 +95,11 @@ func TestDiv(t *testing.T) {
 	assert.Equal(t, int64(1e11), bi3.Int64())
 }
 
+func TestExp(t *testing.T) {
+	bi := Exp(New(10), New(8))
+	assert.Equal(t, int64(1e8), bi.Int64())
+}
+
 func TestQuo(t *testing.T) {
 	one := New(1)
 	ten := New(10)
