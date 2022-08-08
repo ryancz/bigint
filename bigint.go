@@ -39,3 +39,19 @@ func Mul(x, y *big.Int) *big.Int {
 func Div(x, y *big.Int) *big.Int {
 	return New(0).Div(x, y)
 }
+
+func Exp(x, y *big.Int) *big.Int {
+	return New(0).Exp(x, y, nil)
+}
+
+func Quo(x, y *big.Int) *big.Int {
+	return New(0).Quo(x, y)
+}
+
+func QuoRem(x, y *big.Int) (*big.Int, *big.Int) {
+	return New(0).QuoRem(x, y, New(0))
+}
+
+func Rem(x, y *big.Int) *big.Int {
+	return New(0).Rem(x, y)
+}

@@ -94,3 +94,27 @@ func TestDiv(t *testing.T) {
 	bi3 := Div(bi1, bi2)
 	assert.Equal(t, int64(1e11), bi3.Int64())
 }
+
+func TestQuo(t *testing.T) {
+	one := New(1)
+	ten := New(10)
+	bi := Quo(ten, one)
+	assert.Equal(t, int64(10), bi.Int64())
+
+	s := "1000000000000000000000"
+	bi1, ok := NewFromString(s, 10)
+	assert.True(t, ok)
+	bi2 := New(1e10)
+	bi3 := Quo(bi1, bi2)
+	assert.Equal(t, int64(1e11), bi3.Int64())
+}
+
+func TestQuoRem(t *testing.T) {
+	s := "1001234567890"
+	bi1, ok := NewFromString(s, 10)
+	assert.True(t, ok)
+	bi2 := New(1e10)
+	bi3, bi4 := QuoRem(bi1, bi2)
+	assert.Equal(t, int64(100), bi3.Int64())
+	assert.Equal(t, int64(1234567890), bi4.Int64())
+}
